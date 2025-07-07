@@ -1,0 +1,10 @@
+[project]
+name = "educhain"
+version = "0.1.0"
+description = "EduChain MCP Tool"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.10.1",
+]
+
+[tool.uv]
