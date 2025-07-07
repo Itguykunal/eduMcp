@@ -138,4 +138,4 @@ Use the `generate_flashcards` tool to make flashcards on "The Solar System".
 ├── README.md                  # You’re reading it now
 ```
 
-Made with ❤️ using [EduChain](https://github.com/satvik314/educhain) + Claude.
+Made using [EduChain](https://github.com/satvik314/educhain) + Claude.
