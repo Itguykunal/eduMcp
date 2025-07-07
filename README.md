@@ -102,8 +102,12 @@ Update your `claude_desktop_config.json` like this:
   "mcpServers": {
     "educhain": {
       "command": "uv",
-      "args": ["run", "server.py"],
-      "cwd": "/absolute/path/to/this/project"
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/eduMcp",
+        "run",
+        "server.py"
+      ]
     }
   }
 }
