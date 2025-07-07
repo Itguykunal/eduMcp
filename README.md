@@ -1,4 +1,3 @@
-````markdown
 # 📚 EduChain MCP Server for Claude Desktop
 
 This project is an AI-powered **MCP (Model Context Protocol) server** built using the [EduChain](https://github.com/satvik314/educhain) library. It integrates with **Claude Desktop** and provides tools to generate educational content such as:
@@ -147,13 +146,3 @@ Once the repo is ready, send the GitHub link to:
 ---
 
 Made with ❤️ using [EduChain](https://github.com/satvik314/educhain) + Claude.
-
-```
-
----
-
-Let me know if you want:
-- A ready-to-upload ZIP
-- A GitHub repo pushed automatically (I’ll guide)
-- Or a `.gitignore` added for safety
-```
