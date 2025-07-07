@@ -1,53 +1,102 @@
-# EduChain MCP Server ✨
+````markdown
+# 📚 EduChain MCP Server for Claude Desktop
 
-This project is a custom [MCP server](https://modelcontextprotocol.io) built using the [Educhain](https://github.com/satvik314/educhain) library. It enables Claude Desktop to dynamically generate educational content using AI.
+This project is an AI-powered **MCP (Model Context Protocol) server** built using the [EduChain](https://github.com/satvik314/educhain) library. It integrates with **Claude Desktop** and provides tools to generate educational content such as:
 
-## 🚀 Features
+- ✅ Multiple Choice Questions (MCQs)
+- ✅ Lesson Plans
+- ✅ Flashcards
 
-The server exposes 3 tools to Claude Desktop:
+---
 
-### 1. `generate_mcqs`
-Generate multiple-choice questions for any topic.
-- **Input**: topic (string), number of questions (default = 5)
-- **Output**: A JSON list of MCQs
+## ⚙️ Features
 
-### 2. `generate_lesson_plan`
-Create a detailed lesson plan for a given topic.
-- **Input**: topic (string)
-- **Output**: Structured plan with objectives, content, and duration
+| Tool | Description |
+|------|-------------|
+| `generate_mcqs` | Generates multiple-choice questions based on a topic |
+| `generate_lesson_plan` | Creates a structured lesson plan |
+| `generate_flashcards` | Creates Q&A flashcards for study |
 
-### 3. `generate_flashcards`
-Generate study flashcards in Q&A format.
-- **Input**: topic (string)
-- **Output**: List of question-answer flashcards
+---
 
-## 🧠 How It Works
+## 🚀 Setup Instructions
 
-The server uses:
-- `educhain` for content generation
-- `FastMCP` from the `mcp` SDK to register tools
-- `mcp.run(transport="stdio")` to communicate with Claude Desktop
+> These steps will guide you through installing everything and running the server with Claude Desktop.
 
-## 📦 How to Run
+---
 
-1. Clone this repo and navigate to it
-2. Install dependencies:
-   ```bash
-   uv venv
-   source .venv/bin/activate
-   uv pip install -e /path/to/educhain-main
-   uv add "mcp[cli]" httpx
+### 🧰 Step 1: Install `uv` (if not already)
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ````
 
-3. Run the server:
+---
 
-   ```bash
-   uv run server.py
-   ```
+### 🐍 Step 2: Create and activate a virtual environment
 
-## 🔌 Claude Desktop Config
+```bash
+uv venv
+source .venv/bin/activate
+```
 
-In your `claude_desktop_config.json`:
+---
+
+### 📦 Step 3: Install EduChain (from local GitHub repo)
+
+```bash
+uv pip install -e /absolute/path/to/educhain-main
+```
+
+> Example:
+>
+> ```bash
+> uv pip install -e /Users/kunal/Desktop/github/educhain-main
+> ```
+
+---
+
+### 📦 Step 4: Install MCP + httpx
+
+```bash
+uv add "mcp[cli]" httpx
+```
+
+---
+
+### 🧠 Step 5: Add Your API Key in `server.py`
+
+In `server.py`, replace this line with your actual key:
+
+```python
+os.environ["OPENAI_API_KEY"] = "sk-..."  # ← Your OpenAI API key here
+```
+
+> ⚠️ This is not recommended for production but acceptable for testing/submission.
+
+---
+
+## ▶️ Running the Server
+
+Make sure you're in the project folder and the virtual environment is activated.
+
+Then run:
+
+```bash
+uv run server.py
+```
+
+If successful, you'll see:
+
+```
+✅ EduChain MCP FastMCP server is starting...
+```
+
+---
+
+## 💻 Claude Desktop Configuration
+
+Update your `claude_desktop_config.json` like this:
 
 ```json
 {
@@ -55,92 +104,56 @@ In your `claude_desktop_config.json`:
     "educhain": {
       "command": "uv",
       "args": ["run", "server.py"],
-      "cwd": "/Users/kunal/Desktop/educhain"
+      "cwd": "/absolute/path/to/this/project"
     }
   }
 }
 ```
 
-## ✅ Example Prompts to Try in Claude
+Restart Claude Desktop to reload the config.
 
-* Generate 3 MCQs on “Photosynthesis” using `generate_mcqs`
-* Create a lesson plan on “Newton’s Laws” using `generate_lesson_plan`
-* Make flashcards on “Python Basics” using `generate_flashcards`
+---
+
+## 💬 Example Prompts in Claude
+
+```text
+Use the `generate_mcqs` tool to create 3 questions on "Photosynthesis".
+
+Use the `generate_lesson_plan` tool for "Newton's Laws of Motion".
+
+Use the `generate_flashcards` tool to make flashcards on "The Solar System".
+```
+
+---
+
+## 📂 Project Files
+
+```bash
+├── server.py                  # MCP server script with all 3 tools
+├── claude_desktop_config.json # Config to link Claude Desktop with the server
+├── Sample_Responses.txt       # Examples of prompts and tool responses
+├── README.md                  # You’re reading it now
+```
+
+---
+
+## 📧 Submission Instructions
+
+Once the repo is ready, send the GitHub link to:
+
+* `prathmesh@buildfastwithai.com`
+* `shubham@buildfastwithai.com`
+
+---
+
+Made with ❤️ using [EduChain](https://github.com/satvik314/educhain) + Claude.
 
 ```
 
 ---
 
-## ✅ 2. `Sample_Responses.txt`
-
-```
-
-Prompt: Use the `generate_mcqs` tool to create 3 MCQs on "Photosynthesis"
-Response:
-Q1: What is the main product of photosynthesis?
-A. Oxygen
-B. Glucose
-C. Carbon dioxide
-D. Water
-Answer: B
-
-Q2: Which organelle performs photosynthesis?
-A. Mitochondria
-B. Nucleus
-C. Ribosome
-D. Chloroplast
-Answer: D
-
----
-
-Prompt: Use the `generate_lesson_plan` tool for "Python Loops"
-Response:
-{
-"lesson\_plan": {
-"title": "Python Loops",
-"duration": "45 minutes",
-"objectives": \["Understand for and while loops", "Use break and continue"],
-...
-}
-}
-
----
-
-Prompt: Use the `generate_flashcards` tool for "Solar System"
-Response:
-Q: What is the largest planet in our solar system?
-A: Jupiter
-
-Q: Which planet is known as the Red Planet?
-A: Mars
-
-````
-
----
-
-## ✅ 3. `claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "educhain": {
-      "command": "uv",
-      "args": ["run", "server.py"],
-      "cwd": "/Users/kunal/Desktop/educhain"
-    }
-  }
-}
-````
-
----
-
-## ✅ 4. GitHub Instructions
-
-Create a repo (e.g., `educhain-mcp`) and push:
-
-```
-- server.py
-- README.md
-- Sample_Responses.txt
-- claude_desktop_config.json
+Let me know if you want:
+- A ready-to-upload ZIP
+- A GitHub repo pushed automatically (I’ll guide)
+- Or a `.gitignore` added for safety
 ```
