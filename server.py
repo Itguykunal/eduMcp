@@ -7,7 +7,7 @@ from mcp.server.fastmcp import FastMCP
 print("✅ EduChain MCP FastMCP server is starting...", file=sys.stderr)
 
 # Set your OpenAI API key (required by Educhain)
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "sk-proj-..."
 
 # Initialize Educhain client and MCP
 client = Educhain()
