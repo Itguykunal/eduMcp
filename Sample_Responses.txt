@@ -1,0 +1,80 @@
+==============================
+🧪 Sample 1: generate_mcqs
+==============================
+
+Prompt:
+Use the `generate_mcqs` tool to create 3 MCQs on "Photosynthesis".
+
+Response:
+Q1: What is the main purpose of photosynthesis?
+A. Produce carbon dioxide  
+B. Generate sunlight  
+C. Convert solar energy into chemical energy  
+D. Absorb nitrogen from the air  
+Answer: C
+
+Q2: Which pigment is essential for photosynthesis?  
+A. Hemoglobin  
+B. Melanin  
+C. Chlorophyll  
+D. Keratin  
+Answer: C
+
+Q3: In which part of the plant does photosynthesis primarily occur?  
+A. Roots  
+B. Stem  
+C. Leaves  
+D. Flowers  
+Answer: C
+
+---
+
+==============================
+🧪 Sample 2: generate_lesson_plan
+==============================
+
+Prompt:
+Use the `generate_lesson_plan` tool for the topic "Python Loops".
+
+Response:
+{
+  "lesson_plan": {
+    "title": "Introduction to Python Loops",
+    "grade_level": "Beginner",
+    "duration": "45 minutes",
+    "objectives": [
+      "Understand the difference between for and while loops",
+      "Learn how to use break and continue",
+      "Practice writing basic loops"
+    ],
+    "materials": ["Python IDE", "Code examples"],
+    "activities": [
+      "Code walkthroughs",
+      "Hands-on exercises",
+      "Loop debugging practice"
+    ],
+    "assessment": "Complete a quiz with 5 questions on loop syntax and logic"
+  }
+}
+
+---
+
+==============================
+🧪 Sample 3: generate_flashcards
+==============================
+
+Prompt:
+Use the `generate_flashcards` tool for the topic "The Solar System".
+
+Response:
+Q: What is the largest planet in our solar system?  
+A: Jupiter
+
+Q: Which planet is known as the Red Planet?  
+A: Mars
+
+Q: What is the main source of energy for the solar system?  
+A: The Sun
+
+Q: Which planet has the most prominent ring system?  
+A: Saturn
