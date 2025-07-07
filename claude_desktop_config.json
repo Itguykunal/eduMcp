@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "educhain": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/eduMcp",
+        "run",
+        "server.py"
+      ]
+    }
+  }
+}
