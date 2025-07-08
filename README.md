@@ -128,15 +128,4 @@ Use the `generate_lesson_plan` tool for "Newton's Laws of Motion".
 Use the `generate_flashcards` tool to make flashcards on "The Solar System".
 ```
 
----
-
-## 📂 Project Files
-
-```bash
-├── server.py                  # MCP server script with all 3 tools
-├── claude_desktop_config.json # Config to link Claude Desktop with the server
-├── Sample_Responses.txt       # Examples of prompts and tool responses
-├── README.md                  # You’re reading it now
-```
-
 Made using [EduChain](https://github.com/satvik314/educhain) + Claude.
