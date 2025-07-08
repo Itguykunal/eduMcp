@@ -46,7 +46,8 @@ source .venv/bin/activate
 ```bash
 uv pip install -e /absolute/path/to/educhain-main
 ```
-
+If you haven’t already, first clone the [EduChain GitHub repository](https://github.com/satvik314/educhain):
+then follow step 3
 > Example:
 >
 > ```bash
